@@ -40,10 +40,39 @@ High Level Summary
     * AN Release
     * Network triggered Service Request
     * Xn based inter NG-RAN handover
+    * Lawful Intercept — an **implemented subset** of ETSI TS 103 221-1/-2 and 3GPP
+      TS 33.127/33.128. The AMF and SMF act as IRI-POIs and the UPF as a triggered
+      CC-POI. The boundaries below are stated as of the conformance dispositions
+      that ship with the source, each of which carries its own review date; every
+      count here names the disposition it was taken from.
+
+        * **X1 provisioning** (TS 103 221-1 V1.21.1) — the whole message set clause
+          6.4.1 makes mandatory, the clause 8.2.4 per-message identity binding, the
+          keepalive fail-safe, and fault reporting at the scope the fault has, with a
+          fault that ends reported as having ended. Generic Objects, destination sets,
+          traffic policies and service-type scoping are declared unsupported and
+          refused, rather than acknowledged and ignored. No mandatory gap is open.
+        * **X2/X3 delivery** (TS 103 221-2 V1.10.1) — with the conditional attributes
+          TS 33.128 requires. The emitted Version field is 5 where V1.10.1 defines 6,
+          held there because the only available interoperability peer refuses 0.6.
+          The keepalive mechanism is implemented on both interfaces but has never been
+          exercised against an independent implementation, which is a limit of the
+          evidence rather than of the implementation.
+        * **IRI records** (TS 33.128 V18.16.0) — every mandatory field of every record
+          this implementation produces, of the 16 record types it emits. **30 known
+          conditional-field defects**, and 9 further fields untraced, each enumerated
+          in the disposition, as of its 2026-08-14 revision.
+        * **Content of communication for one warrant per session** where several
+          warrants cover the same session. The overlap is reported to the ADMF, and
+          that report does not satisfy the warrants that receive nothing.
+          Interception-related information is unaffected: several tasks matching one
+          subject each produce their own xIRI.
+
+      The per-clause dispositions ship with the source: ``CONFORMANCE.md`` at the root
+      of the ``li`` module indexes one per interface.
 
 * High Level Features Not supported
     * Charging Interfaces
-    * Lawful Intercept
     * URLLC (Ultra Low Level Latency Communication)
     * Location Based Services
     * Inter NG-RAN node N2 based handover

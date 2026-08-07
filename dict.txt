@@ -1,5 +1,6 @@
 152a5eb
 3gpp
+ADMF
 AMF
 APIs
 AUSF
@@ -10,12 +11,14 @@ Auth
 Autoscaling
 Backend
 Balancer
+CC
 De
 Demux
 Deregister
 Deregistration
 Dockerfile
 Downlink
+ETSI
 FQDN
 GC
 Gerrit
@@ -28,6 +31,7 @@ Haswell
 Homebrew
 IDmap
 IPv
+IRI
 Keepalive
 Kubernetes
 LTE
@@ -53,6 +57,8 @@ ONF
 PCF
 PCRF
 PFCP
+POI
+POIs
 QoS
 Radisys
 Reachability
@@ -272,4 +278,5 @@ virtualenv
 webconsole
 webhooks
 webui
+xIRI
 yaml
